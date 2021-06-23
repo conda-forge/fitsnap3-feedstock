@@ -14,6 +14,8 @@ build:
   number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  entry_points:
+    - fitsnap3 = fitsnap3:main
 
 requirements:
   host:
@@ -35,7 +37,7 @@ test:
     - export OMPI_MCA_plm=isolated
     - export OMPI_MCA_rmaps_base_oversubscribe=yes
     - export OMPI_MCA_btl_vader_single_copy_mechanism=none
-    - {{ PYTHON }} -m fitsnap3 Ta-example.in
+    - fitsnap3 -h
     - pip check
   requires:
     - pip
