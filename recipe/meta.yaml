@@ -1,5 +1,5 @@
 {% set name = "fitsnap3" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fitsnap3-{{ version }}.tar.gz
-  sha256: e1917c7f0ec222f572a607da6a8f8c068765f6fab1e61112f3efe8438c70bc8b
+  sha256: 163e400b5321ae3c47f2b53f30a62dddd445c2cafa4b9fd966a52a1497358cb2
 
 build:
   number: 0
@@ -43,7 +43,7 @@ about:
   license: GPL-2.0-only
   license_family: GPL
   license_file: LICENSE
-  summary: 'Software for generating SNAP machine-learning interatomic potentials'
+  summary: Software for generating SNAP machine-learning interatomic potentials
   description: |
     A Python Package For Training SNAP Interatomic Potentials for use in
     the LAMMPS molecular dynamics package
