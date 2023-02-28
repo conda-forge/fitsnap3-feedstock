@@ -32,7 +32,7 @@ requirements:
     - scikit-learn
     - sympy
     - tabulate
-    - torch
+    - pytorch
     - virtualenv
 
 test:
