@@ -1,5 +1,5 @@
 {% set name = "fitsnap3" %}
-{% set version = "3.0.0.1" %}
+{% set version = "3.0.1.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fitsnap3-{{ version }}.tar.gz
-  sha256: d3317b73566dddb226f645b774426d71ac4825747641f74de71b3af84b4eb5aa
+  sha256: b8c415cf69a18e076d26b0ed05039337c2c0a19f98fdd287873a87cab6151c9a
 
 build:
   number: 0
