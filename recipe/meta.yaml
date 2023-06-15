@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fitsnap3-{{ version }}.tar.gz
-  sha256: 0b867eea8de475c3a5fe66474aba4d188a5094892b60a7f0490e87c886980e36
+  sha256: 80f08cbc24ca99eec05e117971e5284b8535c6e0d03a603668581b7efa025e7b
 
 build:
   number: 0
