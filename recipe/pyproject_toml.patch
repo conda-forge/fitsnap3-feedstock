@@ -1,0 +1,26 @@
+From e3193b03886b4c2907c67394876b3a8c5233a263 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan-janssen@users.noreply.github.com>
+Date: Thu, 15 Jun 2023 17:59:41 -0600
+Subject: [PATCH] dependency update
+
+---
+ pyproject.toml | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index d233f612..7dffd7ca 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -26,12 +26,10 @@ dependencies = [
+     "numpy",
+     "scipy",
+     "scikit-learn",
+-    "virtualenv",
+     "psutil",
+     "pandas",
+     "tabulate",
+     "mpi4py",
+-    "Cython",
+     "torch",
+     "sympy",
+     "pyyaml",
