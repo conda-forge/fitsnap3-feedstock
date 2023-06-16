@@ -9,9 +9,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fitsnap3-{{ version }}.tar.gz
   sha256: 80f08cbc24ca99eec05e117971e5284b8535c6e0d03a603668581b7efa025e7b
+  patches:
+    - pyproject_toml.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
