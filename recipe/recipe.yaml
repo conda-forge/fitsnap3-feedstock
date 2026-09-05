@@ -1,0 +1,70 @@
+schema_version: 1
+
+context:
+  name: fitsnap3
+  version: "3.1.0.4"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fitsnap3-${{ version }}.tar.gz
+  sha256: 80f08cbc24ca99eec05e117971e5284b8535c6e0d03a603668581b7efa025e7b
+  patches:
+    - pyproject_toml.patch
+
+build:
+  number: 3
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - numpy >=1.17.2
+    - pandas >=0.25.1
+    - psutil >=5.6.3
+    - python >=${{ python_min }}
+    - scipy >=1.3.1
+    - lammps
+    - mpi4py
+    - pyyaml
+    - scikit-learn
+    - sympy
+    - tabulate
+    - pytorch
+
+tests:
+  - python:
+      imports:
+        - fitsnap3lib
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - export OMPI_MCA_plm=isolated
+      - export OMPI_MCA_rmaps_base_oversubscribe=yes
+      - export OMPI_MCA_btl_vader_single_copy_mechanism=none
+
+about:
+  license: GPL-2.0-only
+  license_file: LICENSE
+  summary: Software for generating SNAP machine-learning interatomic potentials
+  description: |
+    A Python Package For Training SNAP Interatomic Potentials for use in
+    the LAMMPS molecular dynamics package
+  homepage: https://github.com/FitSNAP/FitSNAP
+  repository: https://github.com/FitSNAP/FitSNAP
+  documentation: https://github.com/FitSNAP/FitSNAP
+
+extra:
+  recipe-maintainers:
+    - rohskopf
+    - jan-janssen
